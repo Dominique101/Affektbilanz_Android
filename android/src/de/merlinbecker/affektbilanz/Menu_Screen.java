@@ -5,7 +5,6 @@ import java.util.Iterator;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
-import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -18,7 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-class Buttons {
+//zZt nutzlos
+/*class Buttons {
 	
 	int id;
 	String text;
@@ -28,10 +28,11 @@ class Buttons {
 		this.text = text;
 	}
 	
-}
+} */
 
 public class Menu_Screen extends Activity {
 	
+	//List-Item
 	LayoutInflater inflater;
 	
 	ListView listview;
@@ -91,21 +92,20 @@ public class Menu_Screen extends Activity {
 		listview.setOnItemClickListener(listview_listener = new OnItemClickListener() {
 		//listview_listener = new OnItemClickListener() {
 
+			// v = View, das geklickt wurde
 			@Override
-			public void onItemClick(AdapterView<?> parent, View arg1, int position,
+			public void onItemClick(AdapterView<?> parent, View v, int position,
 					long arg3) {
 				//listview_btndelete = (Button) listview_view.findViewById(R.id.button5);
-					Cursor cursor;
 				//if (listview.getItemAtPosition(position) == listview_btndelete) {
-					cursor = (Cursor) parent.getAdapter().getItem(position);
-					listrow = (View) cursor;
-					System.out.println(listrow.get);
-					listrow_txtview = (TextView) listrow.findViewById(R.id.textView1);
+				
+					//onItemClick erhält geklicktes View als Parameter View  v
+					listrow_txtview = (TextView) v.findViewById(R.id.textView1);
 				
 					Iterator<Sheets> iterator = test.iterator();	
 					while (iterator.hasNext()) {
 						Sheets i = iterator.next();
-						if (i.tag == (listrow_txtview.getText().toString())) test.remove(i);
+						if (i.tag == (listrow_txtview.getText().toString())) iterator.remove();
 					}
 					transfer.sendData(test);
 					finish();
