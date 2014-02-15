@@ -1,14 +1,11 @@
 package de.merlinbecker.affektbilanz;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.*;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -77,7 +74,7 @@ public class MainActivity extends Activity {
 	
 	//globale Deklaration, da in mehreren Methoden gebraucht
 	EditText dialog_input;
-	//Variable fuer Textübergabe
+	//Variable fuer Text≈∏bergabe
 	String txt;
 	
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/	
@@ -123,7 +120,7 @@ public class MainActivity extends Activity {
         
         sheet_list = new ArrayList<Sheets>();
         
-        //Instanz der Singleton DataWrapper zum globalen verfügbar Machen von list  
+        //Instanz der Singleton DataWrapper zum globalen verf≈∏gbar Machen von list  
         transfer = DataWrapper.getInstance();
        
         
@@ -188,7 +185,7 @@ public class MainActivity extends Activity {
     	if (v.getId() == R.id.menu_btn_id) {
     		transfer.sendData(sheet_list);
     		
-    		//erst alle Views löschen, dann neu erstellen
+    		//erst alle Views l≈°schen, dann neu erstellen
     		linear_lt.removeAllViews();
     		
     		startActivityForResult(intent_menu_Act, 0);
